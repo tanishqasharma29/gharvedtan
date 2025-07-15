@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Story - Gharvedtan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="policy-page.css" />
+  <script src="script.js" defer></script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
+    authDomain: "gvt12-95103.firebaseapp.com",
+    projectId: "gvt12-95103",
+    storageBucket: "gvt12-95103.appspot.com",
+    messagingSenderId: "1020720871999",
+    appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2><a href="index.html">GHARVEDTAN</a></h2>
+    <button class="primary-btn" onclick="openZipModal()">Explore Weekly Food Service</button>
+    <ul class="menu">
+      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Payment Method')">Payment Method</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Delivery Address')">Delivery Address</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Add Zip Code')">Add Zip Code</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Referrals')">Referrals</a></li>
+      <li><a href="customer-support.html">Customer Support</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="food-safety.html">Food Safety</a></li>
+    </ul>
+    <div class="user-info" id="userInfo">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Log In</button>
+    </div>
+  </nav>
+
+  <!-- Open Sidebar Button -->
+  <button id="openSidebar" onclick="toggleSidebar()">☰</button>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="page-container">
+      <h1>Our Story</h1>
+      <p>
+        At Gharvedtan, we believe that the essence of community is built around trust, tradition, and meaningful human connection. 
+        What started as a small idea—to connect people with local, home-based food and property solutions—quickly grew into a movement.
+      </p>
+      <p>
+        Our journey began with a simple question: <em>How can we empower everyday people to share the warmth of their homes and kitchens with others?</em> 
+        In a world dominated by big brands and generic listings, we wanted to create something personal, secure, and rooted in authenticity.
+      </p>
+      <p>
+        Gharvedtan (which means “Home-based Return”) is more than just a platform. It’s a bridge between:
+        <ul>
+          <li>Home cooks offering weekly meals with love and care</li>
+          <li>Sellers listing real estate in their local neighborhoods</li>
+          <li>Buyers and seekers looking for trust, transparency, and personal connection</li>
+        </ul>
+      </p>
+      <p>
+        Today, Gharvedtan connects thousands of users across India, fostering not just business—but relationships, memories, and impact.
+        From a mother preparing tiffins for office-goers to a family selling their ancestral home, every listing tells a story.
+      </p>
+      <p>
+        We are committed to ethical practices, safe transactions, and innovation that makes real-life impact. With every update, feature, and partnership, 
+        we aim to keep our values at the core—<strong>trust, community, and empowerment.</strong>
+      </p>
+      <p>
+        Thank you for being part of the Gharvedtan family. We’re just getting started—and this story is only going to grow stronger with you.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

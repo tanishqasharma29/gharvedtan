@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Safety - Gharvedtan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="policy-page.css" />
+  <script src="script.js" defer></script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
+    authDomain: "gvt12-95103.firebaseapp.com",
+    projectId: "gvt12-95103",
+    storageBucket: "gvt12-95103.appspot.com",
+    messagingSenderId: "1020720871999",
+    appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2><a href="index.html">GHARVEDTAN</a></h2>
+    <button class="primary-btn" onclick="openZipModal()">Explore Weekly Food Service</button>
+    <ul class="menu">
+      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Payment Method')">Payment Method</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Delivery Address')">Delivery Address</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Add Zip Code')">Add Zip Code</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Referrals')">Referrals</a></li>
+      <li><a href="customer-support.html">Customer Support</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="food-safety.html">Food Safety</a></li>
+    </ul>
+    <div class="user-info" id="userInfo">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Log In</button>
+    </div>
+  </nav>
+
+  <!-- Open Sidebar Button -->
+  <button id="openSidebar" onclick="toggleSidebar()">☰</button>
+
+  <!-- Content -->
+  <div class="main-content">
+    <div class="page-container">
+      <h1>Food Safety</h1>
+
+      <p>
+        At Gharvedtan, we are deeply committed to ensuring that every meal delivered through our platform meets the highest standards of hygiene and safety. Our focus on food safety is designed to protect the health of our users while supporting our Shefs in following safe and responsible cooking practices.
+      </p>
+
+      <h2>Our Commitment</h2>
+      <p>
+        We partner only with verified Shefs (home chefs) who comply with both local and national food safety regulations. Each Shef on our platform agrees to follow best practices for cleanliness, storage, preparation, and delivery.
+      </p>
+
+      <h2>Safety Measures We Enforce</h2>
+      <ul>
+        <li><strong>Kitchen Verification:</strong> All Shef kitchens undergo an initial review and regular follow-up audits to ensure cleanliness and functionality.</li>
+        <li><strong>Mandatory Training:</strong> Every Shef must complete a food safety and hygiene certification course before onboarding.</li>
+        <li><strong>Protective Gear:</strong> Use of gloves, head coverings, and sanitized cooking tools is strictly enforced during food preparation.</li>
+        <li><strong>Ingredient Sourcing:</strong> Shefs are encouraged to use fresh, high-quality, and locally sourced ingredients for better health and taste.</li>
+        <li><strong>Temperature Guidelines:</strong> Hot foods are packed at the correct temperature to reduce contamination risks.</li>
+        <li><strong>Packaging Standards:</strong> We use sealed, food-grade, eco-friendly packaging that preserves freshness while minimizing waste.</li>
+      </ul>
+
+      <h2>Customer Feedback Monitoring</h2>
+      <p>
+        We actively monitor customer reviews, ratings, and reports. If a Shef receives repeated complaints regarding hygiene or quality, our team intervenes to investigate and take action. This could include warnings, temporary suspensions, or permanent removal from the platform.
+      </p>
+
+      <h2>Ongoing Improvements</h2>
+      <p>
+        Food safety is not a one-time check—it’s an evolving responsibility. We constantly update our policies based on:
+      </p>
+      <ul>
+        <li>Government health advisories and FSSAI (Food Safety and Standards Authority of India) guidelines</li>
+        <li>Emerging food tech trends and safe preparation practices</li>
+        <li>Direct feedback from users and Shefs</li>
+      </ul>
+
+      <h2>Consumer Responsibility</h2>
+      <p>
+        While we take every step to ensure safety, we also encourage users to report any concerns immediately via the Customer Support section. If you suspect food tampering or experience health issues after a meal, please contact us directly.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or concerns about our food safety process?<br>
+        Email us at <a href="mailto:support@gharvedtan.com">support@gharvedtan.com</a><br>
+        or call us at +91-9876-123-456 (Mon–Sat, 9 AM to 6 PM)
+      </p>
+
+      <p><strong>Your safety is our priority. Thank you for trusting Gharvedtan.</strong></p>
+    </div>
+  </div>
+
+</body>
+</html>

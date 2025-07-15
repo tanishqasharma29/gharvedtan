@@ -1,0 +1,94 @@
+/* privacy.css */
+.privacy-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  font-family: sans-serif;
+  line-height: 1.7;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.privacy-container h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.privacy-container h2 {
+  margin-top: 30px;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.privacy-container ul {
+  padding-left: 20px;
+}
+
+.privacy-container li {
+  margin-bottom: 10px;
+}
+.privacy-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 30px 40px;
+  background: linear-gradient(to bottom right, #ffffff, #f9f9f9);
+  border-radius: 12px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.privacy-container h1 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+  color: #d35400;
+  text-align: center;
+  font-weight: 600;
+}
+
+.privacy-container p {
+  font-size: 1.05em;
+  margin-bottom: 16px;
+}
+
+.privacy-container h2 {
+  margin-top: 40px;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #e67e22;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+.privacy-container ul {
+  padding-left: 25px;
+  margin-top: 10px;
+}
+
+.privacy-container li {
+  margin-bottom: 10px;
+  font-size: 1.03em;
+  position: relative;
+  padding-left: 10px;
+}
+
+.privacy-container li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.privacy-container a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.privacy-container a:hover {
+  text-decoration: underline;
+}

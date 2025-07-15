@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service - Gharvedtan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="TOS.css" />
+  <script src="script.js" defer></script>
+  <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
+    authDomain: "gvt12-95103.firebaseapp.com",
+    projectId: "gvt12-95103",
+    storageBucket: "gvt12-95103.appspot.com",
+    messagingSenderId: "1020720871999",
+    appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+    <h2><a href="index.html" style="text-decoration: none; color: inherit;">GHARVEDTAN</a></h2>
+    <button class="primary-btn" onclick="openZipModal()">Explore Weekly Food Service</button>
+    <ul class="menu">
+      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Payment Method')">Payment Method</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Delivery Address')">Delivery Address</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Add Zip Code')">Add Zip Code</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Customer Support')">Customer Support</a></li>
+      <li><a href="#" onclick="loadFooterPage('Our Story')">Our Story</a></li>
+      <li><a href="#" onclick="loadFooterPage('Become a Shef')">Become a Shef</a></li>
+      <li><a href="TOS.html">Terms of Service</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+    </ul>
+    <div class="user-info" id="userInfo">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Log In</button>
+    </div>
+  </nav>
+
+  <!-- Open Sidebar Button -->
+  <button id="openSidebar" onclick="toggleSidebar()">&#9776;</button>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="tos-container">
+      <h1>Terms of Service</h1>
+      <p><strong>Effective Date:</strong> July 13, 2025</p>
+
+      <p>Welcome to Gharvedtan. These Terms of Service ("Terms") govern your access to and use of our web-based real estate platform. By using the platform, you agree to be bound by these Terms. If you do not agree, please discontinue use immediately.</p>
+
+      <h2>1. Eligibility</h2>
+      <p>Users must be at least 18 years of age and capable of forming binding legal contracts. By using Gharvedtan, you represent that you meet these criteria.</p>
+
+      <h2>2. Account Creation and Security</h2>
+      <p>You must provide accurate, complete, and updated registration information. You are responsible for maintaining the confidentiality of your credentials and all activity that occurs under your account.</p>
+
+      <h2>3. Listings, Content & Conduct</h2>
+      <p>Users may list properties or post content. All content must be legal, non-fraudulent, and not infringe on others' rights. We may remove or edit content at our discretion.</p>
+
+      <h2>4. Financial Transactions</h2>
+      <p>Transactions on Gharvedtan may involve third-party payment gateways. We do not store credit/debit card details and disclaim liability for any payment issues or processing errors.</p>
+
+      <h2>5. Prohibited Uses</h2>
+      <ul>
+        <li>Violating any applicable laws or regulations</li>
+        <li>Spamming or harassing users</li>
+        <li>Interfering with platform security or infrastructure</li>
+        <li>Accessing or scraping the site using automated tools</li>
+      </ul>
+
+      <h2>6. Suspension & Termination</h2>
+      <p>We reserve the right to suspend or terminate your access if you breach these Terms or engage in inappropriate behavior.</p>
+
+      <h2>7. Platform Availability</h2>
+      <p>We strive for high availability but make no guarantees of uninterrupted service. We may update or modify the platform at any time.</p>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>We are not liable for indirect, incidental, or consequential damages arising from your use of the platform.</p>
+
+      <h2>9. Intellectual Property Rights</h2>
+      <p>All logos, trademarks, UI components, and content are the intellectual property of Gharvedtan or its licensors. Unauthorized use is prohibited.</p>
+
+      <h2>10. Updates to Terms</h2>
+      <p>These Terms may be revised periodically. Material changes will be notified on this page, and continued use implies acceptance.</p>
+
+      <h2>11. Governing Law</h2>
+      <p>These Terms are governed by the laws of India. Any legal dispute shall be resolved in the courts of India.</p>
+
+      <h2>12. Contact</h2>
+      <p>If you have any questions regarding these Terms, please email us at: <a href="mailto:support@gharvedtan.com">support@gharvedtan.com</a></p>
+
+      <p><strong>&copy; 2025 Gharvedtan. All rights reserved.</strong></p>
+    </div>
+  </div>
+
+</body>
+</html>

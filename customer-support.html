@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Support - Gharvedtan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="policy-page.css" />
+  <script src="script.js" defer></script>
+</head>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
+    authDomain: "gvt12-95103.firebaseapp.com",
+    projectId: "gvt12-95103",
+    storageBucket: "gvt12-95103.appspot.com",
+    messagingSenderId: "1020720871999",
+    appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2><a href="index.html">GHARVEDTAN</a></h2>
+    <button class="primary-btn" onclick="openZipModal()">Explore Weekly Food Service</button>
+    <ul class="menu">
+      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Payment Method')">Payment Method</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Delivery Address')">Delivery Address</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Add Zip Code')">Add Zip Code</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Referrals')">Referrals</a></li>
+      <li><a href="customer-support.html">Customer Support</a></li>
+      <li><a href="our-story.html">Our Story</a></li>
+      <li><a href="food-safety.html">Food Safety</a></li>
+    </ul>
+    <div class="user-info" id="userInfo">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Log In</button>
+    </div>
+  </nav>
+
+  <!-- Open Sidebar Button -->
+  <button id="openSidebar" onclick="toggleSidebar()">☰</button>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="page-container">
+      <h1>Customer Support</h1>
+
+      <p>
+        At Gharvedtan, we are committed to ensuring that your experience on our platform is smooth, secure, and satisfying. 
+        Whether you’re a buyer, seller, or food service provider, our customer support team is here to assist you every step of the way.
+      </p>
+
+      <h2>How We Can Help</h2>
+      <ul>
+        <li>Technical issues with account creation, login, or dashboard access</li>
+        <li>Questions regarding orders, deliveries, or payment disputes</li>
+        <li>Help with listing your home or weekly food service</li>
+        <li>Concerns about safety, reporting a user, or suspicious activity</li>
+        <li>General feedback or feature requests</li>
+      </ul>
+
+      <h2>Support Channels</h2>
+      <p><strong>📧 Email Support:</strong><br>
+        Reach out to us at <a href="mailto:support@gharvedtan.com">support@gharvedtan.com</a>. We aim to respond within 24 hours for all email inquiries.
+      </p>
+
+      <p><strong>📞 Phone Support:</strong><br>
+        Call us at <strong>+91-9876-123-456</strong> between <strong>9:00 AM – 6:00 PM</strong>, Monday through Saturday.
+      </p>
+
+      <p><strong>💬 Live Chat (Coming Soon):</strong><br>
+        We are working on integrating live chat for real-time help. In the meantime, please use the "Customer Support" section via the sidebar to submit a support ticket.
+      </p>
+
+      <h2>Tips for Faster Resolution</h2>
+      <ul>
+        <li>Include your full name and registered email ID in your message</li>
+        <li>Attach screenshots or order IDs if applicable</li>
+        <li>Clearly explain the issue or question</li>
+      </ul>
+
+      <h2>We're Here for You</h2>
+      <p>
+        Our support team takes every concern seriously. Whether it’s a small bug or a major issue, you can count on us to listen, help, and improve.
+        Thank you for trusting Gharvedtan.
+      </p>
+
+    </div>
+  </div>
+</body>
+</html>

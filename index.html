@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gharvedtan</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
+      authDomain: "gvt12-95103.firebaseapp.com",
+      projectId: "gvt12-95103",
+      storageBucket: "gvt12-95103.appspot.com",
+      messagingSenderId: "1020720871999",
+      appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.firestore();
+  </script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <h2><a href="index.html" style="text-decoration: none; color: inherit;">GHARVEDTAN</a></h2>
+    <button class="primary-btn" onclick="openZipModal()">Explore Weekly food Service</button>
+    <ul class="menu">
+      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Payment method')">Payment method</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Delivery address')">Delivery address</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Add zip code')">Add zip code</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Customer Support')">Customer Support</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Our Story')">Our Story</a></li>
+      <li><a href="#" onclick="loadSidebarPage('Become a shef')">Become a shef</a></li>
+    </ul>
+    <div class="user-info" id="userInfo">
+      <button onclick="openModal('signup')">Sign Up</button>
+      <button onclick="openModal('login')">Log In</button>
+    </div>
+  </nav>
+  <button id="openSidebar" onclick="toggleSidebar()">☰</button>
+
+  <!-- Hero Section -->
+  <section class="top-banner">
+    <img src="images/WhatsApp Image 2025-07-03 at 6.44.26 PM.jpeg" alt="Top Banner - Homemade Food">
+  </section>
+
+  <section class="hero">
+    <h3>HOW IT WORKS</h3>
+    <h1><span class="highlight">GHARVEDTAN </span>: A SHARED PERSONAL CHEF</h1>
+    <p>Our talented, local shefs cook for a handful of households at a time — delivering the quality and care of a personal chef, at a fraction of the price.</p>
+  </section>
+
+  <!-- Image Carousel -->
+  <section class="slide2">
+    <h1>BRINGING THE HUMANITY BACK TO MEALTIME</h1>
+    <p>Our talented shefs curate their menus, source ingredients locally, and prepare each meal with love and care.</p>
+    <div class="images" id="imageContainer"></div>
+    <div class="slider-nav">
+      <span onclick="showSingleImage(0)">1</span>
+      <span onclick="showSingleImage(1)">2</span>
+      <span onclick="showSingleImage(2)">3</span>
+      <span onclick="showSingleImage(3)">4</span>
+    </div>
+  </section>
+
+  <!-- Featured Shefs -->
+  <section class="featured-shefs">
+    <h2>Meet Our Top Home Cooks</h2>
+    <div class="shef-cards">
+      <div class="shef-card">
+        <img src="images/shef1.jpg" alt="Shef A">
+        <h4>Shef Aarti</h4>
+        <p>Specializes in Punjabi Cuisine, loved for her rich gravies.</p>
+      </div>
+      <div class="shef-card">
+        <img src="images/shef2.jpg" alt="Shef B">
+        <h4>Shef Ramesh</h4>
+        <p>South Indian breakfast master – idlis and dosas that melt in your mouth.</p>
+      </div>
+      <div class="shef-card">
+        <img src="images/shef3.jpg" alt="Shef C">
+        <h4>Shef Fatima</h4>
+        <p>Kolkata flavors with a twist, famous for biryani and rolls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-cards">
+      <blockquote>"Feels like maa ke haath ka khana – every bite is pure love!" – <strong>Anjali</strong></blockquote>
+      <blockquote>"I no longer cook! I get healthy meals daily from Shef Prakash!" – <strong>Ravi</strong></blockquote>
+    </div>
+  </section>
+
+  <!-- Animated Stats -->
+  <section class="stats">
+    <div class="stat">
+      <h3 id="totalShefs">0</h3>
+      <p>Verified Home Cooks</p>
+    </div>
+    <div class="stat">
+      <h3 id="mealsDelivered">0</h3>
+      <p>Meals Delivered</p>
+    </div>
+    <div class="stat">
+      <h3 id="citiesServed">0</h3>
+      <p>Cities Served</p>
+    </div>
+  </section>
+
+  <!-- Mid Scroll Image -->
+  <section class="mid-scroll-image">
+    <img src="images/image.png" alt="Mid-scroll Delicious Meal" />
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Stay Updated!</h2>
+    <p>Get the latest meals and updates directly in your inbox.</p>
+    <input type="email" id="newsletterEmail" placeholder="Your email" />
+    <button onclick="subscribeNewsletter()">Subscribe</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>LEARN</h4>
+        <p><a href="customer-support.html">Customer Support</a></p>
+        <p><a href="our-story.html">Our Story</a></p>
+        <p><a href="food-safety.html">Food Safety</a></p>
+      </div>
+      <div>
+        <h4>RESOURCES</h4>
+        <p><a href="#" onclick="loadFooterPage('Become a shef')">Become a shef</a></p>
+        <p><a href="#" onclick="loadFooterPage('Homemade food delivery')">Homemade food delivery</a></p>
+        <p><a href="TOS.html">Terms of Service</a></p>
+        <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
+      </div>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com/YOUR_HANDLE" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" />
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>Shef, Inc. 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <div class="modal hidden" id="authModal">
+    <div class="modal-content">
+      <h2 id="authTitle">Sign Up</h2>
+      <input type="hidden" id="authMode" value="signup" />
+      <input type="text" id="nameInput" placeholder="Name" />
+      <input type="email" id="emailInput" placeholder="Email" />
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <input type="text" id="phoneInput" placeholder="Phone Number" />
+      <input type="text" id="cityInput" placeholder="City" />
+      <select id="roleInput">
+        <option value="">Select Role</option>
+        <option value="Buyer">Buyer</option>
+        <option value="Seller">Home Cook</option>
+      </select>
+      <div class="modal-actions">
+        <button onclick="submitAuth()">Submit</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="zipModal">
+    <div class="modal-content">
+      <h2>📍 Enter your zip code</h2>
+      <p>Let’s see who’s cooking in your area.</p>
+      <input type="text" id="zipInput" placeholder="Zip code" />
+      <div class="modal-actions">
+        <button onclick="closeZipModal()">Cancel</button>
+        <button onclick="findShefs()">Find shefs near you</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

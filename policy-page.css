@@ -1,0 +1,90 @@
+.page-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 36px;
+  background: linear-gradient(to bottom right, #fff, #fdf8f5);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d2d2d;
+  line-height: 1.75;
+  transition: box-shadow 0.3s ease;
+}
+
+.page-container:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.page-container h1 {
+  font-size: 2.4em;
+  margin-bottom: 28px;
+  color: #c94c1c;
+  font-weight: 700;
+  border-left: 6px solid #c94c1c;
+  padding-left: 16px;
+  background: linear-gradient(to right, #fff4eb, #ffffff);
+  border-radius: 6px;
+  letter-spacing: 0.4px;
+  box-shadow: inset 2px 0 0 #c94c1c;
+}
+
+.page-container h2 {
+  font-size: 1.5em;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: #4b2e1e;
+  font-weight: 600;
+  position: relative;
+}
+
+.page-container h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #c94c1c;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.page-container p {
+  margin-bottom: 18px;
+  font-size: 1.08em;
+  line-height: 1.85;
+  color: #333;
+}
+
+.page-container ul {
+  margin: 20px 0;
+  padding-left: 28px;
+  list-style: disc;
+}
+
+.page-container li {
+  margin-bottom: 12px;
+  font-size: 1.08em;
+  color: #444;
+}
+
+.page-container a {
+  color: #c94c1c;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.page-container a:hover {
+  color: #a8370c;
+  text-decoration: underline;
+}
+
+.sidebar h2 a {
+  text-decoration: none !important;
+  font-weight: bold;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.sidebar h2 a:hover {
+  color: #c94c1c;
+}
