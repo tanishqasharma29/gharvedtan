@@ -1,199 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gharvedtan</title>
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/sushi.png" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gharvedtan</title>
+  </head>
+  <body>
+    <header>
+      <nav class="header__nav">
+        <div class="header__logo">
+          <h4 data-aos="fade-down">Gharvedtan</h4>
+          <div class="header__logo-overlay"></div>
+        </div>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore-compat.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyBM8qhSn_tUGFF3oGNHYZDpGaNm_tNmSuU",
-      authDomain: "gvt12-95103.firebaseapp.com",
-      projectId: "gvt12-95103",
-      storageBucket: "gvt12-95103.appspot.com",
-      messagingSenderId: "1020720871999",
-      appId: "1:1020720871999:web:1b5c255d44e0c6e88f568a",
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.firestore();
-  </script>
-</head>
-<body>
+        <ul class="header__menu" data-aos="fade-down">
+          <li>
+            <a href="#menu">Menu</a>
+          </li>
+          <li>
+            <a href="#food">Food</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#about-us">About Us</a>
+          </li>
+          <li>
+            <img src="assets/search.svg" alt="search" />
+          </li>
+        </ul>
 
-  <!-- Sidebar -->
-  <nav class="sidebar" id="sidebar">
-    <button class="close-btn" onclick="toggleSidebar()">×</button>
-    <h2><a href="index.html" style="text-decoration: none; color: inherit;">GHARVEDTAN</a></h2>
-    <button class="primary-btn" onclick="openZipModal()">Explore Weekly food Service</button>
-    <ul class="menu">
-      <li><a href="#" onclick="loadSidebarPage('Profile')">Profile</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Orders')">Orders</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Payment method')">Payment method</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Delivery address')">Delivery address</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Add zip code')">Add zip code</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Notifications')">Notifications</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Following')">Following</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Customer Support')">Customer Support</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Our Story')">Our Story</a></li>
-      <li><a href="#" onclick="loadSidebarPage('Become a shef')">Become a shef</a></li>
-    </ul>
-    <div class="user-info" id="userInfo">
-      <button onclick="openModal('signup')">Sign Up</button>
-      <button onclick="openModal('login')">Log In</button>
-    </div>
-  </nav>
-  <button id="openSidebar" onclick="toggleSidebar()">☰</button>
+        <ul class="header__menu-mobile" data-aos="fade-down">
+          <li>
+            <img src="assets/menu.svg" alt="menu" />
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="top-banner">
-    <img src="images/WhatsApp Image 2025-07-03 at 6.44.26 PM.jpeg" alt="Top Banner - Homemade Food">
-  </section>
+    <section class="hero">
+      <div class="hero-image">
+        <img 
+          src="assets/sushi-1.png"
+          alt="paneer"
+          data-aos="fade-up"
+        />
+        
 
-  <section class="hero">
-    <h3>HOW IT WORKS</h3>
-    <h1><span class="highlight">GHARVEDTAN </span>: A SHARED PERSONAL CHEF</h1>
-    <p>Our talented, local shefs cook for a handful of households at a time — delivering the quality and care of a personal chef, at a fraction of the price.</p>
-  </section>
-
-  <!-- Image Carousel -->
-  <section class="slide2">
-    <h1>BRINGING THE HUMANITY BACK TO MEALTIME</h1>
-    <p>Our talented shefs curate their menus, source ingredients locally, and prepare each meal with love and care.</p>
-    <div class="images" id="imageContainer"></div>
-    <div class="slider-nav">
-      <span onclick="showSingleImage(0)">1</span>
-      <span onclick="showSingleImage(1)">2</span>
-      <span onclick="showSingleImage(2)">3</span>
-      <span onclick="showSingleImage(3)">4</span>
-    </div>
-  </section>
-
-  <!-- Featured Shefs -->
-  <section class="featured-shefs">
-    <h2>Meet Our Top Home Cooks</h2>
-    <div class="shef-cards">
-      <div class="shef-card">
-        <img src="images/shef1.jpg" alt="Shef A">
-        <h4>Shef Aarti</h4>
-        <p>Specializes in Punjabi Cuisine, loved for her rich gravies.</p>
+        <div class="hero-image__overlay"></div>
       </div>
-      <div class="shef-card">
-        <img src="images/shef2.jpg" alt="Shef B">
-        <h4>Shef Ramesh</h4>
-        <p>South Indian breakfast master – idlis and dosas that melt in your mouth.</p>
+
+      <div class="hero-content">
+        <div class="hero-content-info" data-aos="fade-left">
+          <h1>GHARVEDTAN</h1>
+          <p>Feel the taste of home food anywhere and anytime.</p>
+
+          <div class="hero-content__buttons">
+            <button class="hero-content__order-button">Order Now</button>
+            <button class="hero-content__play-button">
+              <img src="assets/play-circle.svg" alt="play" />
+              How to Order
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-content__testimonial" data-aos="fade-up">
+          <div class="hero-content__customer flex-center">
+            <h4>24<span>k+</span></h4>
+            <p>Happy Customers</p>
+          </div>
+
+          <div class="hero-content__review">
+            <img src="assets/user.png" alt="user" />
+            <p>"This is the closest you’ll get to home-cooked food—without being home."</p>
+          </div>
+        </div>
       </div>
-      <div class="shef-card">
-        <img src="images/shef3.jpg" alt="Shef C">
-        <h4>Shef Fatima</h4>
-        <p>Kolkata flavors with a twist, famous for biryani and rolls.</p>
+    </section>
+
+    <section class="about-us" id="about-us">
+      <div class="about-us__image">
+        <div class="about-us__image-sushi3">
+          <img src="assets/sushi-3.png" alt="sushi" data-aos="fade-right" />
+        </div>
+
+        <button class="about-us__button">
+          Learn More
+
+          <img src="assets/arrow-up-right.svg" alt="learn more" />
+        </button>
+
+        <div class="about-us__image-sushi2">
+          <img src="assets/sushi-2.png" alt="sushi"  data-aos="fade-right" />
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-cards">
-      <blockquote>"Feels like maa ke haath ka khana – every bite is pure love!" – <strong>Anjali</strong></blockquote>
-      <blockquote>"I no longer cook! I get healthy meals daily from Shef Prakash!" – <strong>Ravi</strong></blockquote>
-    </div>
-  </section>
-
-  <!-- Animated Stats -->
-  <section class="stats">
-    <div class="stat">
-      <h3 id="totalShefs">0</h3>
-      <p>Verified Home Cooks</p>
-    </div>
-    <div class="stat">
-      <h3 id="mealsDelivered">0</h3>
-      <p>Meals Delivered</p>
-    </div>
-    <div class="stat">
-      <h3 id="citiesServed">0</h3>
-      <p>Cities Served</p>
-    </div>
-  </section>
-
-  <!-- Mid Scroll Image -->
-  <section class="mid-scroll-image">
-    <img src="images/image.png" alt="Mid-scroll Delicious Meal" />
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <h2>Stay Updated!</h2>
-    <p>Get the latest meals and updates directly in your inbox.</p>
-    <input type="email" id="newsletterEmail" placeholder="Your email" />
-    <button onclick="subscribeNewsletter()">Subscribe</button>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>LEARN</h4>
-        <p><a href="customer-support.html">Customer Support</a></p>
-        <p><a href="our-story.html">Our Story</a></p>
-        <p><a href="food-safety.html">Food Safety</a></p>
+      <div class="about-us__content"  data-aos="fade-left">
+        <p class="sushi__subtitle">About Us</p>
+        <h3 class="sushi__title">Our mission is to bring the soul of Indian home kitchens, in every bite.</h3>
+        <p class="sushi__description">We carry forward the spirit of Atithi Devo Bhava—serving soulful Indian home food with love and care in every bite.
+        </p>
       </div>
-      <div>
-        <h4>RESOURCES</h4>
-        <p><a href="#" onclick="loadFooterPage('Become a shef')">Become a shef</a></p>
-        <p><a href="#" onclick="loadFooterPage('Homemade food delivery')">Homemade food delivery</a></p>
-        <p><a href="TOS.html">Terms of Service</a></p>
-        <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
-      </div>
-    </div>
-    <div class="social-icons">
-      <a href="https://instagram.com/YOUR_HANDLE" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" class="social-icon" />
-      </a>
-    </div>
-    <div class="footer-bottom">
-      <p>Shef, Inc. 2025. All Rights Reserved.</p>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Modals -->
-  <div class="modal hidden" id="authModal">
-    <div class="modal-content">
-      <h2 id="authTitle">Sign Up</h2>
-      <input type="hidden" id="authMode" value="signup" />
-      <input type="text" id="nameInput" placeholder="Name" />
-      <input type="email" id="emailInput" placeholder="Email" />
-      <input type="password" id="passwordInput" placeholder="Password" />
-      <input type="text" id="phoneInput" placeholder="Phone Number" />
-      <input type="text" id="cityInput" placeholder="City" />
-      <select id="roleInput">
-        <option value="">Select Role</option>
-        <option value="Buyer">Buyer</option>
-        <option value="Seller">Home Cook</option>
-      </select>
-      <div class="modal-actions">
-        <button onclick="submitAuth()">Submit</button>
-        <button onclick="closeModal()">Cancel</button>
-      </div>
-    </div>
+    <section class="popular-foods" id="menu">
+  <h2 class="popular-foods__title" data-aos="flip-up">Desi Delights</h2>
+
+  <div class="popular-foods__filters sushi__hide-scrollbar" data-aos="fade-up">
+    <button class="popular-foods__filter-btn active">All</button>
+    <button class="popular-foods__filter-btn">
+
+      South Indian
+    </button>
+    <button class="popular-foods__filter-btn">
+  
+      North Indian
+    </button>
+    <button class="popular-foods__filter-btn">
+      
+      West Indian
+    </button>
+    <button class="popular-foods__filter-btn">
+      
+      East Indian
+    </button>
+    <button class="popular-foods__filter-btn">
+      
+      Thali
+    </button>
   </div>
 
-  <div class="modal hidden" id="zipModal">
-    <div class="modal-content">
-      <h2>📍 Enter your zip code</h2>
-      <p>Let’s see who’s cooking in your area.</p>
-      <input type="text" id="zipInput" placeholder="Zip code" />
-      <div class="modal-actions">
-        <button onclick="closeZipModal()">Cancel</button>
-        <button onclick="findShefs()">Find shefs near you</button>
+  <div class="popular-foods__catalogue" data-aos="fade-up">
+    <article class="popular-foods__card">
+      <img class="popular-foods__card-image" src="assets/idli-sambar.png" alt="idli-sambar" />
+      <h4 class="popular-foods__card-title">Idli Sambar</h4>
+
+      <div class="popular-foods__card-details flex-between">
+        <div class="popular-foods__card-rating">
+          <img src="assets/star.svg" alt="star" />
+          <p>4.8</p>
+        </div>
+
+        <p class="popular-foods__card-price">₹80</p>
       </div>
-    </div>
+    </article>
+
+    <article class="popular-foods__card active-card">
+      <img class="popular-foods__card-image" src="assets/butter-chicken.png" alt="butter-chicken" />
+      <h4 class="popular-foods__card-title">Butter Chicken</h4>
+      
+      <div class="popular-foods__card-details flex-between">
+        <div class="popular-foods__card-rating">
+          <img src="assets/star.svg" alt="star" />
+          <p>5.0</p>
+        </div>
+        
+        <p class="popular-foods__card-price">₹220</p>
+      </div>
+    </article>
+
+    <article class="popular-foods__card">
+      <img class="popular-foods__card-image" src="assets/gujarati-thali.png" alt="gujarati-thali" />
+      <h4 class="popular-foods__card-title">Gujarati Thali</h4>
+
+      <div class="popular-foods__card-details flex-between">
+        <div class="popular-foods__card-rating">
+          <img src="assets/star.svg" alt="star" />
+          <p>4.9</p>
+        </div>
+
+        <p class="popular-foods__card-price">₹180</p>
+      </div>
+    </article>
   </div>
 
-  <script src="script.js"></script>
-</body>
+  <button class="popular-foods__button">
+    Explore More
+    <img src="assets/arrow-right.svg" alt="arrow-right" />
+  </button>
+</section>
+
+    <section class="trending" id="food">
+      <section class="trending-sushi">
+        <div class="trending__content" data-aos="fade-right">
+          <p class="sushi__subtitle">What’s Trending </p>
+  
+          <h3 class="sushi__title">Rasoi
+          </h3>
+          <p class="sushi__description">Feel the taste of the most delicious home made food here.
+          </p>
+  
+          <ul class="trending__list flex-between">
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Gajar ka Halwa</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Punjabi Thali</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Poriyal</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Rajma Chaval</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Baingan ka Bharta</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Varan Bhaat</p>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="trending__image flex-center">
+          <img src="assets/sushi-5.png" alt="sushi-5" data-aos="fade-left" />
+  
+          <div class="trending__arrow trending__arrow-left">
+            <img src="assets/arrow-vertical.svg" alt="arrow vertical" />
+          </div>
+  
+          <div class="trending__arrow trending__arrow-bottom">
+            <img src="assets/arrow-horizontal.svg" alt="arrow horizontal" />
+          </div>
+        </div>
+
+      </section>
+
+      <div class="trending__discover" data-aos="zoom-in">
+        <p>Discover</p>
+      </div>
+
+      <section class="trending-drinks">
+        <div class="trending__image flex-center">
+          <img src="assets/sushi-4.png" alt="sushi-4" data-aos="fade-right" />
+  
+          <div class="trending__arrow trending__arrow-top">
+            <img src="assets/arrow-horizontal.svg" alt="arrow horizontal" />
+          </div>
+  
+          <div class="trending__arrow trending__arrow-right">
+            <img src="assets/arrow-vertical.svg" alt="arrow vertical" />
+          </div>
+        </div>
+
+        <div class="trending__content" data-aos="fade-left">
+          <p class="sushi__subtitle">What’s Trending</p>
+  
+          <h3 class="sushi__title">Desi Sips
+          </h3>
+          <p class="sushi__description">Feel the taste of the most delicious Indian drinks here.
+          </p>
+  
+          <ul class="trending__list flex-between">
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Adrakwali Chai</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>
+                Falooda</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Bel Sharbat</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Thandai</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Aam Panna</p>
+            </li>
+            <li>
+              <div class="trending__icon flex-center">
+                <img src="assets/check.svg" alt="check" />
+              </div>
+              <p>Nimbu Pani</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="subscription flex-center" id="services">
+      <h2 data-aos="flip-down">
+        Get offers stright <br />
+        to your inbox
+      </h2>
+      <p data-aos="fade-up">Sign up for the Gharvedtan newsletter</p>
+
+      <div class="subscription__form" data-aos="fade-up">
+        <input type="text" placeholder="Enter your email address"/>
+        <button>Get Started</button>
+      </div>
+    </section>
+
+    <footer class="footer flex-between">
+      <h3 class="footer__logo">
+        <span>GharVED</span>tan
+      </h3>
+
+      <ul class="footer__nav">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-us">About Us</a></li>
+      </ul>
+
+      <ul class="footer__social">
+        <li class="flex-center">
+          <img src="assets/facebook.svg" alt="facebook" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/instagram.svg" alt="instagram" />
+        </li>
+        <li class="flex-center">
+          <img src="assets/twitter.svg" alt="twitter" />
+        </li>
+      </ul>
+    </footer>
+
+    <script src="js/script.js" type="module"></script>
+  </body>
 </html>
